@@ -99,17 +99,17 @@ public class BrotliLoader {
 
     private static String determineOS() {
         String osName = System.getProperty("os.name").toLowerCase(Locale.US);
-        if (LINUX.matches(osName)) return LINUX.name;
-        if (WIN32.matches(osName)) return WIN32.name;
-        if (OSX.matches(osName)) return OSX.name;
+        for (OS os : OS.values()) {
+            if (os.matches(osName)) return os.name;
+        }
         return null;
     }
 
     private static String determineArch() {
         String osArch = System.getProperty("os.arch").toLowerCase(Locale.US);
-        if (X86_AMD64.matches(osArch)) return X86_AMD64.name;
-        if (X86.matches(osArch)) return X86.name;
-        if (ARM32_VFP_HFLT.matches(osArch)) return ARM32_VFP_HFLT.name;
+        for (Arch arch : Arch.values()) {
+            if (arch.matches(osArch)) return arch.name;
+        }
         return null;
     }
 }
