@@ -18,6 +18,7 @@ package com.nixxcode.jvmbrotli.common;
 
 enum Arch {
   ARM32_VFP_HFLT("arm32-vfp-hflt", "arm32-vfp-hflt", "arm"),
+  AARCH64("aarch64", "aarch64", "arm64"),
   X86("x86", "x86", "i386", "i486", "i586", "i686", "pentium"),
   X86_AMD64("x86-amd64", "x86-amd64", "x86_64", "amd64", "em64t", "universal");
 
